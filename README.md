@@ -1,88 +1,115 @@
-# 📊 ShopEasy Marketing Analytics Portfolio Project
+# 📉 Customer Churn Analysis – Full-Stack BI & ML Project
 
-This project analyzes the marketing performance of ShopEasy, an online retail company, using real-world customer engagement data. The goal is to identify reasons for low conversion, evaluate campaign effectiveness, and improve customer retention strategies using **SQL**, **Power BI**, **Excel**, and **Python**.
-
+This end-to-end churn analysis project identifies customer segments most at risk of leaving and builds a predictive model to anticipate churn. The project integrates **SQL Server**, **Power BI**, and **Python** to simulate a real-world enterprise analytics pipeline.
 
 
 ## 🎯 Project Objectives
 
-- Analyze the full **customer journey**: from impression to conversion.
-- Identify low-performing campaigns and funnel drop-offs.
-- Perform **sentiment analysis** on customer reviews.
-- Deliver insights through **interactive dashboards** and presentations.
+- Analyze customer churn behavior based on demographics, services, and billing data.
+- Predict which customers are likely to churn using Machine Learning (Random Forest).
+- Visualize key churn metrics and predictions in an interactive Power BI dashboard.
+- Build an end-to-end data flow using SQL ETL → Python ML → Power BI BI.
 
 
 
 ## 🧰 Tools & Technologies
 
-| Tool/Tech     | Usage                          |
-|--------------|---------------------------------|
-| SQL Server    | Data cleaning, joins, aggregations |
-| Power BI      | Dashboard and KPI visualization |
-| Excel         | Manual calculations, backup summaries |
-| Python (NLP)  | Sentiment analysis using TextBlob |
-| PowerPoint    | Final presentation deck         |
+| Tool/Tech        | Purpose                             |
+|------------------|--------------------------------------|
+| SQL Server        | ETL, data cleaning, view creation    |
+| Power BI          | Visualization & Dashboarding         |
+| Python (Jupyter)  | Machine Learning with Random Forest  |
+| Excel             | ML prediction export for dashboard   |
+| scikit-learn, Pandas | Model training & preprocessing     |
 
 
 
 
-## 📊 Key Metrics & KPIs
+## 🔧 Project Workflow
 
-- **Conversion Rate** trend across months (e.g., 5.0% in Oct → 10.2% in Dec)
-- **Engagement Funnel**: Views → Clicks → Conversions
-- **Content Type Analysis**: Blogs vs. Social vs. Video
-- **Customer Feedback Score**: Avg rating ≈ 3.7 (target was 4.0)
-- **Sentiment Analysis**: 275 positive vs 82 negative reviews
+### 1️⃣ Data Engineering (SQL Server)
+- Created `db_churn` database and loaded raw telecom customer data into `stg_Churn`.
+- Performed null checks and imputed missing values using `ISNULL` and `CASE`.
+- Created cleaned `prod_Churn` table and BI-ready views:
+  - `vw_ChurnData` – active & churned customers
+  - `vw_JoinData` – new customers who joined
 
+### 2️⃣ Visualization (Power BI)
+- Connected Power BI to SQL views for dynamic data refresh.
+- Created dashboards with slicers for:
+  - Contract Type, Internet Type, State, Tenure, Monthly Charge
+- Built KPIs and visuals:
+  - Churn Rate %, Monthly Revenue, Refund %, Churn by Segment
+- Integrated ML predictions into visuals.
 
-
-## 📈 Power BI Dashboard Preview
-
-> You can explore:
-- Monthly conversion trends
-- Customer engagement by content type
-- Review sentiment breakdown
-- Product performance and user satisfaction
-
-📎 File: `ShopEasy_Market_Intelligence_Dashboard.pbix`
-
-
-
-## 🧠 Insights & Recommendations
-
-| Insight                                  | Recommendation |
-|------------------------------------------|----------------|
-| 📉 Low conversion in May                 | Revise ad targeting strategy |
-| 🎯 Blog content drives most views        | Invest in blog-based campaigns |
-| 💬 Mixed feedback on specific products   | Improve product quality & respond to reviews |
-| 📽️ Video content underperforms          | A/B test call-to-actions & format |
+### 3️⃣ Machine Learning (Python)
+- Preprocessed cleaned data from SQL using Pandas.
+- Trained a **Random Forest Classifier** to predict churn (`Customer_Status`).
+- Achieved 85%+ recall, visualized feature importance.
+- Exported predictions to Excel → used in Power BI for **predicted churn profile** visuals.
 
 
 
-## 📌 Outcome
+## 📊 Key Dashboard Metrics
 
-✔️ Identified months with the highest and lowest conversions  
-✔️ Mapped marketing actions to customer engagement trends  
-✔️ Delivered executive-ready dashboards and presentations  
-✔️ Helped ShopEasy uncover **data-driven marketing strategies**
+- 📈 Churn Rate Trends by Tenure & Contract
+- 🧾 Monthly Revenue Loss from Churned Users
+- 🧍 Gender & State-based Churn Comparison
+- 💡 Predicted Churners & Profile Filtering
+
+📎 File: `Churn_Analysis.pbix`
 
 
 
-## 🗂️ Files Included
+## 🧠 Insights & Findings
 
-- 📄 SQL queries for data transformation
-- 📊 Power BI dashboard
-- 📈 NLP-based sentiment notebook
-- 📽️ Final PowerPoint presentation
+| Insight                                  | Impact |
+|------------------------------------------|--------|
+| 📉 Month-to-month contracts had highest churn | 2.5x more churn than yearly plans |
+| 🧾 Customers with high monthly charges churned more | Suggests value mismatch |
+| 🗓️ Tenure < 12 months = 3x churn rate    | Suggest early retention focus |
+| 🌐 Users without online security/support churned more | Bundle offers can help |
+
+
+
+## 📌 Project Impact
+
+✔️ End-to-end integration of SQL, BI, and ML  
+✔️ Built a retrainable model pipeline with business reporting  
+✔️ Enabled data-driven decision-making on customer retention  
+✔️ Improved stakeholder visibility into churn patterns
+
+
+
+## 🔗 Files Included
+
+- 📄 SQL Scripts: Database creation, cleaning, view generation  
+- 📈 Power BI Dashboard: `Churn_Analysis.pbix`  
+- 📒 Python Notebook: ML Model Training + Prediction Export  
+- 📊 Excel Output: Final predictions for Power BI integration
+
+
+
+## 🧾 Next Steps
+
+- Automate refresh pipeline for weekly churn analysis  
+- Deploy dashboard to Power BI Service with alerts  
+- Extend ML with XGBoost or deep learning models
 
 
 
 ## 📬 Contact
 
-For questions or collaborations:  
 📧 devikadev626@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/devika-m-183378187)  
 🔗 [GitHub](https://github.com/Devikadev626)
+
+
+
+
+
+
+
 
 
 
